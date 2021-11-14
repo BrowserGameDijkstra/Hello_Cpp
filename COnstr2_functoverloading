@@ -1,0 +1,30 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+/*  more than one constructor by using FUNCTION OVERLOADING */
+class myClass {
+    public:
+        myClass() {
+            cout <<"Hey! New Object created!!\n";
+        }
+        myClass (int value) {
+           cout <<"Object created with value "<<value; 
+        }
+        void setName(string x) {
+            name = x;
+        }
+        string getName() {
+            return name;
+        }
+    private:
+        string name;
+};
+
+int main() {
+    myClass mobj; /*prints "Hey! New Object created!!*/
+    myClass myObj (1); /*prints "Object created with value 1"*/
+
+    return 0;
+}
