@@ -1,0 +1,119 @@
+/* Constants
+
+A constant is an expression with a fixed value. It cannot be changed while the program is run.Use the const keyword to define a constant variable.
+All constant variables must be initialized at the time of their creation.
+*/
+const int x = 42;
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	return 0;
+}
+/*
+to be more precise, you cannot change x value through its name, in other words, if I create a pointer to x, let's say p, then *p=2 for example will perfectly work : try this for example:
+it will print 3,which means that the value of x actually changed
+*/
+// BAD CODE BAD CODE
+int main(){
+const int x=1;
+int *ptr=&x;
+*ptr=3;
+cout<<x;
+return 0;
+}
+
+// same goes for references, for instance :
+int a=2;
+const int& b(a);
+a=3;
+cout<<b;
+
+// it will print 3
+// Type in the missing keyword to declare a constant variable named ''var'' of type double
+const double var = 3.4;
+
+/*
+As with the built-in data types, we can make class objects constant by using the const keyword.
+const MyClass obj;
+
+All const variables must be initialized when they're created. In the case of classes, this initialization is done via constructors. If a class is not initialized using a parameterized constructor, a public default constructor must be provided - if no public default constructor is provided, a compiler error will occur.
+
+Once a const class object has been initialized via the constructor, you cannot modify the object's member variables. This includes both directly making changes to public member variables and calling member functions that set the value of member variables.
+When you've used const to declare an object, you can't change its data members during the object's lifetime.
+
+Saunders it's also a hint for the compiler to optimize. Every operation you make with constants is evaluated at compile time. For example, if you have a const c = 100 and somewhere in the code you have sqrt(c), it actually gets replaced with the result instead of the function call, thus saving time when the program runs, and some memory.
+*/
+
+// Drag and drop from the options below to declare an object named ''st'' of type Student, then call its printAge() function
+
+Student,st;
+st. printAge();
+
+/*
+Only non-const objects can call non-const functions.
+A constant object can't call regular functions. Hence, for a constant object to work you need a constant function. 
+
+To specify a function as a const member, the const keyword must follow the function prototype, outside of its parameters' closing parenthesis. For const member functions that are defined outside of the class definition, the const keyword must be used on both the function prototype and definition. For example:
+*/
+MyClass.h
+
+class MyClass
+{
+  public:
+    void myPrint() const;
+};
+
+MyClass.cpp
+#include "MyClass.h"
+#include <iostream>
+using namespace std;
+
+void MyClass::myPrint() const {
+  cout <<"Hello"<<endl;
+}
+// Now the myPrint() function is a constant member function. As such, it can be called by our constant object:
+int main() {
+  const MyClass obj;
+  obj.myPrint();
+}
+// Outputs "Hello"
+a)Non constant objects can call functions which are const or non-const.
+// declare a constant printAge() member function for the Student class
+  
+class Student 
+{
+public:
+void printAge() const;
+};
+
+// add the 'mutable' keyword at the begining of the variable declaration
+
+#include <iostream>
+using namespace std;
+
+class MyClass
+{
+    public:
+    MyClass();
+        void myPrint() const;
+        mutable int cnt;
+};
+
+void MyClass::myPrint() const {
+    cout <<"Hello "<<cnt<<endl;
+    cnt++;
+}
+
+MyClass::MyClass()
+{
+    MyClass::cnt = 0;
+}
+
+int main() {
+    const MyClass obj;
+    obj.myPrint();
+    obj.myPrint();
+    obj.myPrint();
+}
