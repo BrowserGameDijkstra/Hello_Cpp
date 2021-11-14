@@ -1,0 +1,26 @@
+// array string print Quarter I
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+   const char* months[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+
+    // print Q1
+    cout << "Quarter 1 :\n";
+    for (int i = 0 ; i < 3 ; i++)
+    
+        cout << months[i] << endl;
+    
+    return 0;
+}
+
+/*
+output Quarter 1 :
+Jan
+Feb
+Mar
+*/
