@@ -1,0 +1,23 @@
+# include <iostream>
+using namespace std;
+
+int calculateArea (int height,int width);
+
+int main ()
+{
+int height;
+int width;
+cin>>height; 
+cin>>width;
+cout << calculateArea(height,width);
+
+
+system ("pause");
+return 0;
+} 
+
+int calculateArea (int height,int width)
+{
+int result = height*width;
+return result;
+}
