@@ -1,0 +1,13 @@
+/ My attempt
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a = 0, b = 1, sum = a+b;
+    while (sum<60){
+        cout << sum << endl;
+        a=b++;
+        sum = a+b;
+    }
+}
