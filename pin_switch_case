@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+/*Since this app is asking you to enter all of
+the inputs at once, do NOT forget to separate
+the different inputs with new lines, else the
+program will use the same input every time.*/
+
+int main(){
+    int a,b,c,d,e;
+    for (int x=3; x > 0; x--)
+     {
+        cout <<"Please, insert your PIN\n\n";
+        cin >>a>>b>>c>>d>>e;
+        if (a==1&&b==2&&c==3&&d==4&&e==5){
+            cout <<"Access granted!\n";
+            break;
+        }
+        else {
+            cout <<"Wrong PIN!\n";
+            switch (x){
+                case 3:
+                    cout <<"Two more tries left!\n\n";
+                    break;
+                case 2:
+                    cout <<"One more try left!\n\n";
+                    break;
+                case 1:
+                    cout <<"No more tries left!\n";
+                    cout <<"Access denied!\n";
+                    break;
+            }
+        }
+    }
+return 0;
+}
