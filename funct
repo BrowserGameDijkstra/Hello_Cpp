@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+double Quadrat(double x) 
+{
+return x * x; 
+    
+}
+int main() {
+for 
+{
+double x = -15 + 1.5*i; 
+cout << x << "^2 = " << Quadrat(x) << endl; } 
+return 0; }
