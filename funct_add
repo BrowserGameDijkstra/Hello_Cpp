@@ -1,0 +1,104 @@
+#include <iostream>
+using namespace std;
+
+int timesTwo(int x,int y) 
+{
+    return x*y*2;
+}
+
+int main() {
+    cout << timesTwo(1,8) << endl;
+
+    cout <<timesTwo(2,5) << endl;
+
+    cout <<timesTwo(42,0) << endl;
+}
+/*
+Output:
+16
+20
+0
+*/
+
+
+// function add numbers
+#include <iostream>
+using namespace std;
+
+int addNumbers(int x, int y) {
+    int result = x + y;
+    return result;
+}
+
+int main() 
+{
+  cout << addNumbers(50, 25);
+
+  int x = addNumbers(35, 7);
+  cout << x;
+  // Outputs 42
+}
+
+// function add numbers with cin
+#include<iostream>
+using namespace std;
+
+int sum_nums(int x, int y) 
+{
+    return x + y;
+}
+
+int main() 
+{
+int x=x;
+int y=y;
+cin >> x;
+cin >> y;
+
+int answer = sum_nums(x, y);
+    
+    cout << answer << endl;
+}
+// with cin & cout
+//function means simply writing code once and using as many as u need....one simple programme is ADD WITH FUNCTION.
+#include<iostream>
+using namespace std;
+/*creating a function*/
+
+int sum (int a,int b);
+    int c;
+    c=a+b;
+return c;
+
+/*means it will return c value */
+/*now main func*/
+int main()
+{
+cout<<sum(5,6)<<endl;
+cout<<sum(6,4)<<end;
+return 0;
+}
+/*OUTPUT:
+11
+10
+*/
+
+///// cin & sum
+#include <iostream>
+using namespace std;
+
+void calculator(int x, int y) 
+{
+
+int sum = x + y;
+cout << "Your sum is " << sum;
+}
+
+int main() 
+{
+cout << "Hello, please input your numbers" << endl;
+int x1, y1;
+cin >> x1 >> y1;
+calculator(x1, y1); // connection x,y und x1,y1 beachten
+return 0;
+}
