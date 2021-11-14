@@ -1,0 +1,58 @@
+
+ Bsp1.: Dieser Code findet die geringste zahl in einem array
+/*#include <iostream>
+using namespace std;
+
+int main() {
+    int werte[10]={7,3,1,27,8,6,12,4,9,14};
+        int j=0;
+    for ( int i=0; i<10; i++)
+    //{
+        //cout << werte[i] << ",";
+    //}
+    //cout << endl;
+ 
+  
+    if ( werte[i] < werte[j] )
+    {  
+        j=i;
+        //j=i+1;
+    }
+    cout <<  werte[j]<<endl;
+	return 0;
+}*/
+
+//Bsp2.: Sortieralgorithmus
+
+#include <iostream>
+using namespace std;
+
+
+int main() {
+    int werte[10]={7,3,1,27,8,6,12,4,9,14};
+    
+        for ( int i=0; i<10; i++)
+    {
+        cout << werte[i] << ",";
+        
+    }    
+    cout << endl;
+    
+    for (int i=0; i<9;i++)
+    {  
+        int wertesort=werte[i];
+        werte[i]= werte[9-i];
+        werte[9-i]=wertesort;
+    }
+    
+     //(wertesort>werte[i+1])
+    for ( int i=0; i<10; i++)
+    {
+        cout << i << werte[i] << "," << endl;
+    }
+    	return 0;
+    
+    
+    
+    
+}
