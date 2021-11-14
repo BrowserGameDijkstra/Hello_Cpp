@@ -1,0 +1,155 @@
+// Let's create a sample function called myPrint() in our class. 
+/*  methods are functions. 
+It was declared initially in myClass() and later defined in myClass::myClass() {} 
+MyClass.h
+*/
+
+class MyClass
+{
+  public:
+   MyClass();
+   void myPrint();
+};
+
+// MyClass.cpp
+#include "MyClass.h"
+#include <iostream>
+using namespace std;
+
+MyClass::MyClass() {
+}
+
+void MyClass::myPrint() {
+  cout <<"Hello"<<endl;
+}
+// Since myPrint() is a regular member function, it's necessary to specify its return type in both the declaration and the definition.
+
+// prototype the myPrint function in Sally class declaration
+
+
+class  Sally {
+public :
+ Sally();
+ void myPrint ();
+};
+
+// object of the type MyClass, and call its myPrint() function using the dot (.) operator:
+
+#include "MyClass.h"
+
+int main() {
+  MyClass obj;
+  obj.myPrint();
+}
+
+// Outputs "Hello"
+
+// Drag and drop from the options below to declare an object of class Sally in the main function, and call its myPrint member function using the . (dot) operator.
+
+int main() {
+ Sally  obj;
+ obj.myPrint() ;
+}
+
+/* Pointers
+We can also use a pointer to access the object's members. 
+The following pointer points to the obj object:
+The type of the pointer is MyClass*, as it points to an object of that type.
+*/
+MyClass obj;
+MyClass *ptr = &obj;
+
+//  a pointer to ''obj'':
+Sally obj;
+Sally *sallyPtr = &obj;
+
+// Selection Operator
+// The arrow member selection operator (->) is used to access an object's members with a pointer.
+/* When working with an object, use the dot member selection operator (.).
+When working with a pointer to the object, use the arrow member selection operator (->).
+*/
+
+MyClass obj;
+MyClass *ptr = &obj;
+ptr->myPrint();
+
+// ptr->myPrint() is equivalent to (*ptr).myPrint()
+
+In words: Get me the target of ptr and call its myPrint() method.
+
+/*
+there are 3 ways to access object methods :
+object methods, pointer selector, pointer dereference. 
+see example below :
+*/
+
+#include <iostream>
+using namespace std;
+
+class MyClass
+{
+    public:
+        MyClass();
+        void myPrint();
+};
+
+MyClass::MyClass() {
+}
+void MyClass::myPrint() {
+    cout <<"Hello"<<endl;
+}
+// three ways to object methods
+int main() {
+    MyClass obj;
+    // 1st way object methods  
+    obj.myPrint();
+    
+    MyClass *ptr = &obj;
+    // 2nd way using pointer selector
+    ptr->myPrint();
+    // 3rd way using pointer dereference
+    (*ptr).myPrint();
+}
+
+// You can access an object's members in these 5 possible ways:
+
+//1
+MyClass obj;
+obj.myPrint();
+
+//2
+MyClass obj;
+MyClass *ptr = &obj;
+ptr->myPrint();
+
+//3
+MyClass obj;
+MyClass *ptr = &obj;
+(*ptr).myPrint();
+
+//4
+MyClass obj;
+MyClass &ptr = obj;
+ptr.myPrint();
+
+//5
+MyClass obj;
+MyClass &ptr(obj);
+ptr.myPrint();
+
+⚠️️Important Operators⚠️    
+-------------------------------------------
+
+1)   ::    Scope operator
+- Useful for calling functions of a class from source file
+- Type ClassName::FunctionName()
+
+
+2)   .     Dot operator
+- Useful for calling different methods of an object (methods could be variables or functions of a class)
+- Type Obj.MethodName();
+
+
+3)   ->   Selection operator
+- Useful for calling different methods of an object by a pointer to the object.
+- PointerName->MethodName();
