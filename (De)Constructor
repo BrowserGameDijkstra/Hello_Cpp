@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+#include <iostream>
+ 
+struct MyClass
+{
+	MyClass()
+	{
+		std::cout << "ctor" << std::endl;
+	}
+	~MyClass()
+	{
+		std::cout << "dtor" << std::endl;
+	}
+};
+ 
+int main()
+{
+	MyClass m1, m2;
+	std::cout << "Hello" << std::endl;
+}
