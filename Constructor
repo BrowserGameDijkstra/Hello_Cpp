@@ -1,0 +1,57 @@
+*
+Constructors
+
+Class constructors are special member functions of a class. They are executed whenever new objects are created within that class.
+
+The constructor's name is identical to that of the class. It has no return type, not even void.
+*/
+class myClass {
+  public:
+    myClass() {
+      cout <<"Hey";
+    }
+    void setName(string x) {
+      name = x;
+    }
+    string getName() {
+      return name;
+    }
+  private:
+    string name;
+};
+
+int main() {
+  myClass myObj;
+
+  return 0;
+}
+
+//Outputs "Hey"
+
+//Now, upon the creation of an object of type myClass, the constructor is automatically called.
+
+////////////////////////////////
+#include <iostream>
+using namespace std;
+
+class Rectangle
+ {
+     double mHeight, mWidth;
+public:
+      Rectangle() :mHeight(1),mWidth(1){}
+      Rectangle(double height, double width) :mHeight (height), mWidth(width) {}
+      void setRectangle(double x, double y)
+ { 
+     mHeight =x;
+     mWidth=y;
+}
+   double getHeight() { return mHeight ;}
+   double getWidth() { return mWidth ;}
+} ;
+
+int main () {
+Rectangle first(5,6);
+first.setRectangle(5, 6);
+
+return 0;
+}
