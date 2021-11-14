@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+
+int main() {
+	int myInt = 10; // our regular int
+	int * pMyInt = &myInt; //pointer to adress of myInt
+	cout << *pMyInt << endl; //prints the value (10) held at the adress that the pointer holds (myInt).
+	myInt = 35;
+	cout << *pMyInt << endl; //prints 35 because the adress is still pointing to whatever value myInt holds
+	*pMyInt = 20; //now we change the value stored at the adress of myInt
+	cout << *pMyInt << endl; //prints 20
+	cout << myInt << endl; //also prints 20 since we indirectly changed it's value with the pointer.
+	return 0;
+}
+  
