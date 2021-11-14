@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int volume(int x) {
+    cout << "Volume is : " << x*x*x << endl;
+}
+int volume(int x, int y) {
+    cout << "Volume is : " << x*x*y << endl;
+}
+int volume(int x, int y, int z) {
+    cout << "Volume is : " << x*y*z << endl;
+}
+
+int main() {
+    int a = 16, b = 24, c = 13;
+    float bi = 24.541;
+    volume(a);
+    volume(a, b);
+    volume(a, b, c);
+    //it will even work with float,
+    // well after deleting decimals from float...
+    volume(a, bi, c);
+}
