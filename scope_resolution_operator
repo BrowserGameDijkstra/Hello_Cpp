@@ -1,0 +1,29 @@
+/* The double colon in the source file (.cpp) is called the scope resolution operator, and it's used for the constructor definition:
+The scope resolution operator is used to define a particular class' member functions, which have already been declared. Remember that we defined the constructor prototype in the header file.
+So, basically, MyClass::MyClass() refers to the MyClass() member function - or, in this case, constructor - of the MyClass class.
+It is also used for accessing global variable inside every function.
+global variables having global scope.that means accessible every where inside the program.
+Eg
+*/
+:var =10( global)
+
+var=8; (local)
+
+For accessing global ::var
+
+#include "MyClass.h"
+
+MyClass::MyClass()
+{
+   
+}
+
+// a function called "test", belonging to a class "demo" WARNING NO RETURN TYPE
+
+demo::test ()
+{
+    
+}
+
+/*
+in c++ only constructors and destructors should be written without function return type - the above is a bad teaching example
