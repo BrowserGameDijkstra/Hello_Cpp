@@ -1,0 +1,44 @@
+/*#include <iostream>
+using namespace std;
+
+int main() {
+    
+    struct moviesT
+    {   
+        char titel;
+        int  jahr;
+    }
+    derPate, alien;
+    derPate.titel;
+    derPate.jahr;
+    alien.titel;
+    alien.jahr;
+	return 0;
+}
+
+/*Bsp1:
+Sowohl a[i] als auch *(a + i) liefern den Inhalt des i‐ten Array Elements!*/
+ /*int a[] = {100, 110, 120, 130}, * pa, sum = 0; pa = a;
+pa = a; sum += *pa + *(pa + 1) + *(pa + 2) + *(pa + 3);
+/*Bsp2:Größe des Datentyps KundeT: sizeof(KundeT) = 8 + 4 = 12 Byte (ev. auch 8 + 8 = 16 Byte, je nach Alignment)*/
+/*struct KundeT {
+double umsatz; float skonto;
+};
+KundeT Kunde[] = {{1e5, 2.2f}, {1e3, 1.5f}, {1e7, 3.1f}}; KundeT* pKunde = Kunde;
+*pKunde = *(pKunde + 2); //Identisch zu: Kunde[0] = Kunde[2];
+
+
+Bsp3:
+//Zeiger auf Strukturen (Datenverbund)
+struct PunktT {
+double x; double y;
+};
+PunktT punkt[1000]; PunktT* ptr = punkt;
+
+
+punkt[0].x = 10; 
+punkt[2].x = 20; 
+punkt[10].x = 50;
+*/
+#include <iostream>
+using namespace std;
