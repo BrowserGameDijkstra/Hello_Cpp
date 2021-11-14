@@ -1,0 +1,33 @@
+#include <iostream>
+void PrintMessage() // Funktion im globalen Namespace
+{
+    std::cout << "In der Funktion ::PrintMessage()" << std::endl;
+}
+
+namespace A
+{
+    using namespace std;// Alle Namen aus std hier sichtbar
+    void PrintMessage() // // Definition im Namespace A
+{
+{
+    cout << "In der Funktion A::PrintMessage()" << endl;
+}
+}
+namespace B
+{
+    using std::cout;  // cout aus std deklarieren, cout wird nur bekannt gemacht!
+    void PrintMessage(); // Deklaration im Namespace B
+}
+void B::PrintMessage() // Definition im Namespace B
+{
+    cout << "In der Funktion B::PrintMessage()" << std::endl;
+}
+
+// AUFRUF
+int main() 
+{
+::PrintMessage(); 
+A::PrintMessage();
+B::PrintMessage();
+return 0;
+}
