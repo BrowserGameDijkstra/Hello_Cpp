@@ -1,0 +1,68 @@
+#include <iostream>
+using namespace std;
+
+/*
+    A simple codes that can help you
+    understanding about constructor
+    
+
+*/
+
+class myClass 
+{
+    private:
+        string name;
+    
+    public:
+        void setname(string x) 
+        {
+            name = x;
+        }
+        
+        string getname() 
+        {
+            return name;
+        }
+        
+// An example for constructor
+///////////////////////////////////////////////
+
+        myClass(string y) // Constructor..
+        {
+            setname(y); // call function setname();
+            cout << "Hello, i'am your classmates, " << getname() << "\n\n";
+        }
+        
+/* 
+     Syntax: 
+        className(parameter) 
+        {
+            some codes......
+        }
+        
+Constructor name is must same as the class name...
+
+*/
+        
+///////////////////////////////////////////////
+
+};// dont forgot to put semicolon
+
+
+int main() 
+{
+    
+    myClass mizuki("Mizuki..");
+    
+    myClass bean("Bean..");
+    
+    myClass andy("Andy..");
+    
+/*
+After we make a constructors as before, we doesn't need making a "cout (hello, i am your...), setname, getname" for every person (Mizuki,Bean,Andy) on myClass.
+
+It will executed the constructors codes automatically on every object or person we made on myClass as before.
+*/
+     
+    return 0;
+}
