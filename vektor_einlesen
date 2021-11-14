@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+unsigned int const nmax = 100; 
+double a[nmax], b[nmax];
+unsigned int n;{
+// Dimension n einlesen und überprüfen 
+do {
+cout << "Dimension, n <= " << nmax << ": "; 
+cin >> n;
+} 
+while (n < 1 || n > nmax);
+// Vektor a einlesen
+for (unsigned int i = 0; i < n; i++) {
+cout << "a[" << i << "] = "; 
+cin >> a[i];
+} // Vektor b einlesen
+for (unsigned int i = 0; i < n; i++) 
+{
+cout << "b[" << i << "] = "; 
+cin >> b[i];
+}
+// Skalarprodukt berechnen 
+double sp = 0.0;
+for (unsigned int i = 0; i < n; i++) 
+{
+sp += a[i] * b[i]; } // Ausgabe
+cout << "Skalarprodukt = " << sp << endl;
+return 0;
+}
+}
