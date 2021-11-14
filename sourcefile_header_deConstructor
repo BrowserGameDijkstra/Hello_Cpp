@@ -1,0 +1,210 @@
+/*
+Source & Header
+
+The header file (.h) holds the function declarations (prototypes) and variable declarations. 
+It currently includes a template for our new MyClass class, with one default constructor.
+MyClass.h
+*/
+
+#include <iostream>
+using namespace std;
+
+#ifndef MYCLASS_H
+#define MYCLASS_H
+
+class MyClass
+{
+  public:
+    MyClass();
+  protected:
+  private:
+};
+
+#endif // MYCLASS_H
+
+int main() {
+	return 0;
+}
+
+/*
+The implementation of the class and its methods go into the source file (.cpp).
+Currently it includes just an empty constructor.
+MyClass.cpp
+*/
+
+#include "MyClass.h"
+
+MyClass::MyClass()
+{
+   //ctor
+}
+/* 1- In header file, You declare all of the class functions and variables. You determine which one is public, protected or private.
+
+2- In source file, You write the function body and use the variables you declared in header.
+
+3- You will learn about Scope operator (::) in the following lessons.
+Only note that it is an operator for recalling constructors (and every other functions) of a class in source file.
+Source = .cpp file
+Header = .h file
+Source != Header
+*/
+
+/*
+Destructors
+
+Remember constructors? They're special member functions that are automatically called when an object is created.
+Destructors are special functions, as well. They're called when an object is destroyed or deleted.
+Objects are destroyed when they go out of scope, or whenever the delete expression is applied to a pointer directed at an object of a class
+* When we create an object, we are calling the CONSTRUCTORS.(We create an object using the following rule: MyClass Obj)
+
+
+* When we delete an object, we are calling DESTRUCTORS (When the program execution is completed, objects are deleted and then, destructor is called)
+
+
+* DESTRUCTORS and CONSTRUCTORS are Auto-FUNCTIONS.
+(they automatically run whenever an object is created or deleted)
+
+/*
+destructors are not frequently used. However the sequence of constructors and destructors execution is as follows: 
+
+constructor1 () 
+constructor2 ()
+constructor3 ()
+destructor3 ()
+destructor2 ()
+destructor1 ()
+
+Note that I've just mentioned direct names for easy understanding. Ignore the syntax.
+
+They're similar to nested for loop. The last opened for loop closes first. And first opened for loop closes last.
+
+
+*/
+
+/*
+Destructors
+
+The name of a destructor will be exactly the same as the class, only prefixed with a tilde (~). A destructor can't return a value or take any parameters.
+Destructors can be very useful for releasing resources before coming out of the program. This can include closing files, releasing memory, and so on.
+
+Since destructors can't take parameters, they also can't be overloaded. 
+Each class will have just one destructor.
+Defining a destructor is not mandatory; if you don't need one, you don't have to define one.
+
+OVERLOADING: 
+overloading a function simply means we can use two different functions of the same name with the only difference is that the overloaded function takes different parameters or arguments.
+example:
+*/
+void MyFunction(){
+//some code
+}
+void MyFunction(data type argument, data type argument){
+//different code
+}
+
+the function "MyFunction" is overloaded. the compiler will know which function you will need when you call the function with the corresponding arguments.
+
+
+
+class MyClass {
+  public: 
+    ~MyClass() {
+     // some code
+    }
+};
+
+
+// Another example for running destructor ,this is by using delete keyword
+#include<iostream>
+using namespace std;
+
+class Shape{
+public:
+    Shape(){
+    cout<<"Shape is created"<<endl;
+    }
+    ~Shape(){
+    cout<<"Shape is deleted"<<endl;
+    }
+};
+int main(){
+Shape *a=new Shape;
+cout<<"What's this?"<<endl;
+delete a;
+cout<<"I love you !"<<endl;
+return 0;
+}
+
+//Destructor will run when object is removed
+/*If you don't remember how the keyword (delete and new) works ,please review (Dynamic Memory) lesson */
+
+// destructor for class MyClass example3
+
+class MyClass {
+    public:
+    MyClass();
+    ~MyClass();
+};
+}
+
+// After declaring the destructor in the header file, we can write the implementation in the source file MyClass.cpp
+// we included the <iostream> header, so that we can use cout.
+#include "MyClass.h"
+#include <iostream>
+using namespace std;
+
+MyClass::MyClass()
+{
+  cout<<"Constructor"<<endl;
+}
+
+MyClass::~MyClass()
+{
+  cout<<"Destructor"<<endl;
+}
+
+// constructor for class "MyClass", prints some text
+
+#include <iostream>
+#include "MyClass.h"
+using namespace std;
+
+int main() {
+  MyClass obj;
+
+  return 0;
+}
+
+
+// Try It Yourself
+
+We included the class' header file and then created an object of that type.
+This returns the following output:
+
+Constructor
+Destructor
+
+// When the program runs, it first creates the object and calls the constructor. The object is deleted and the destructor is called when the program's execution is completed
+
+
+Let's see the Similarities and Differences between CONSTRUCTORS & DESTRUCTORS:
+
+Similarities:
+--------------------
+1- Both of them (C & D) are automatic functions of a class.
+
+2- Both of them (C & D) do not have type.
+
+3- Both of them (C & D) do not return any value.
+
+Differences:
+--------------------
+1- Constructors will be called upon declaring an object of that class BUT Destructors will be called after deleting the object.
+
+2- A constructor has the same name as the class BUT a Destructor has an extra tilde(~) before the name of a class
+
+3- A constructor might have input like a function, BUT Destructors do not accept input arguments.
+
+
+
+
