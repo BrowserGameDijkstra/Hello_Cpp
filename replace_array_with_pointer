@@ -1,0 +1,32 @@
+//replace arrays with pointer as a argument
+#include <iostream>
+using namespace std;
+
+void printArray(int *arr, int size) {
+    for(int x=0; x<size; x++) {
+        cout << *(arr++) << endl;
+    }
+}
+
+int main() {
+    int myArr[3]= {42, 33, 88};
+    printArray(myArr, 3);
+}
+
+//for that, you can't use 'sizeof()' to get the lenth of array if you want to use only one parameter in the 'printArray' function, like this:
+
+#include <iostream>
+using namespace std;
+
+void printArray(int arr[]) {
+    for(int x=0; x<sizeof(arr)/sizeof(arr[0]); x++) {
+        cout <<arr[x]<< endl;
+    }
+}
+
+int main() {
+    int myArr[3]= {42, 33, 88};
+    printArray(myArr);
+}
+
+//the output is 42, the first element of 'myArr'
