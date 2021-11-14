@@ -1,0 +1,23 @@
+// rnd game 2
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+int main() {
+	srand(time(0)); // Don't forget #include <ctime> this line generate truly random numbers
+	int RandNumber;
+	int guess;
+		cout << "guess the random number betw 1 and 10" << endl;
+        RandNumber = 1 +rand()%10;   /* It's betw 1 and 10 (range), If without 1+ , It'll exe 0 to 9
+						   with 1+ will exe 1 to 10   */
+
+	while (cin >> guess) 
+	if (guess == RandNumber ) {
+		cout << "U're right" << endl;
+	}
+	else if (guess < RandNumber) {
+		cout << "Add more" << endl;
+	}
+	else cout << "It's lesser" << endl;
+	return 0;
+}
