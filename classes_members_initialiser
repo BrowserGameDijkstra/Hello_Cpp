@@ -1,0 +1,264 @@
+/*
+Member Initializers
+
+Recall that constants are variables that cannot be changed, and that all const variables must be initialized at time of creation.
+
+C++ provides a handy syntax for initializing members of the class called the member initializer list (also called a constructor initializer)
+const members are compile time constants, while readonly is runtime constants.
+
+Since const members are compile time constants their attributes and types are known beforehand,  the compilers can choose to optimize them
+
+This class has two member variables, regVar and constVar. It also has a constructor that takes two parameters, which are used to initialize the member variables.
+Running this code returns an error, because one of its member variables is a constant, which cannot be assigned a value after declaration
+*/
+
+class MyClass 
+{
+  public:
+   MyClass(int a, int b) 
+{
+    regVar = a;
+    constVar = b;
+}
+  private:
+    int regVar;
+    const int constVar;
+};
+
+//  a member initialization list can be used to assign values to the member variables
+/*
+Note that in the syntax, the initialization list follows the constructor parameters. The list begins with a colon (:), and then lists each variable to be initialized, along with the value for that variable, with a comma to separate them. 
+Use the syntax variable(value) to assign values.
+The initialization list eliminates the need to place explicit assignments in the constructor body. Also, the initialization list does not end with a semicolon.
+*/
+
+class MyClass {
+ public:
+  MyClass(int a, int b)
+  : regVar(a), constVar(b)
+  {
+  }
+ private:
+  int regVar;
+  const int constVar;
+};
+
+// Class Student, with two members "age, num"; initialize with constructor
+
+Student::Student(int a, int b)
+:age(a),
+num(b), 
+{
+}
+
+// Member Initializers
+MyClass.h
+
+class MyClass {
+  public:
+   MyClass(int a, int b);
+  private:
+   int regVar;
+   const int constVar;
+};
+
+MyClass.cpp
+
+MyClass::MyClass(int a, int b)
+: regVar(a), constVar(b)
+{
+  cout << regVar << endl;
+  cout << constVar << endl;
+}
+// We have added cout statements in the constructor to print the values of the member variables. Our next step is to create an object of our class in main, and use the constructor to assign values.
+// The constructor is used to create the object, assigning two parameters to the member variables via the member initialization list.
+#include "MyClass.h"
+
+int main() 
+{
+  MyClass obj(42, 33);
+}
+
+/*Outputs 
+42
+33
+*/
+
+#include <iostream>
+using namespace std;
+
+class Identity
+{
+public:
+// declare a constructor without define the argument
+  Identity(string n, int a, string c);
+  
+private:
+  string name;
+// declare name
+  int age;
+// declare age
+  string country;
+// declare country 
+};
+
+
+
+// make a member initialization list that also has a constructor and it will initializes the members.
+
+Identity::Identity(string n, int a, string c)
+: name(n), age(a), country(c)
+
+/*
+    How the code work is almost same like this..
+    name = string n
+    age = int a
+    country = string c
+*/
+
+{
+// this scope will be automatically called when the object are created (Constructor) and this is the argument from constructor Identity
+
+  cout << "Name       = " << name << endl;
+  cout << "Age        = " << age << endl;
+  cout << "Country    = " << country << "\n\n";
+}
+
+
+
+int main()
+{
+
+// Syntax = Class Obj(name,age,country);
+
+  Identity ardian("Ardian Anwar", 18, "Indonesia");
+  
+  Identity kim("Kim Lewis", 15, "United States");
+  
+  Identity mizuki("Mizuki Kazane", 17, "Japan");
+  
+  Identity deny("Deny Haryanto", 17, "Indonesia");
+  
+  Identity sally("Sally McSalad", 16, "Sweden");
+
+}
+
+/*****************************************************
+* Why do we need to use member initializer?          *
+*                                                    *
+* Because its not just the matter of writting style, *
+* it has different performance and functionality.    *
+* on some condition. The specific example is classes.*
+*                                                    *
+*****************************************************/
+/*
+
+Explanation step by step how the code works. 
+
+First we will excute Identity ardian("Ardian Anwar", 18, "Indonesia"); 
+
+After that, the compiler will matching the object and it match with Identity(string n, int a, string c); 
+
+Remember Identity(string n, int a, string c); only declare a function (Its like telling the compiler this function is exist). Then the compiler will look for the argument and we found it with...
+
+Identity::Identity(string n, int a, string c) 
+: name(n), age(a), country(c) { some code... }
+
+The compiler will initialize that and excute the code between curly brackets. After done, it will return to main and excute the next line.
+
+i hope you understood it well :)
+
+*/
+
+*/
+MyClass::MyClass(int a, int b)
+: regVar(a), constVar(b)
+{
+    cout << regVar << endl;
+    cout << constVar << endl;
+    
+    int * ptr_a = ®Var;
+    const int * ptr_b = &constVar ;
+    
+    * ptr_a = 69;
+    // * ptr_b = 99;
+
+    cout << regVar << endl;
+    cout << constVar << endl;
+    
+    cout << * ptr_a << endl ;
+    cout << * ptr_b << endl ;
+}
+// another possibility
+#include <iostream>
+using namespace std;
+
+class MyClass {
+    public:
+        MyClass(int a, int b)
+: regVar(a), constVar(b)
+{
+    cout << regVar << endl;
+    cout << constVar << endl;
+}
+    private:
+        int regVar;
+        const int constVar;
+};
+
+
+
+int main() {
+    MyClass obj(42, 33);
+}
+
+MyClass::MyClass(int a, int b)
+: regVar(a), constVar(b)
+{
+    cout << regVar << endl;
+    cout << constVar << endl;
+    
+    int * ptr_a = ®Var;
+    const int * ptr_b = &constVar ;
+    
+    * ptr_a = 69;
+    // * ptr_b = 99;
+
+    cout << regVar << endl;
+    cout << constVar << endl;
+    
+    cout << * ptr_a << endl ;
+    cout << * ptr_b << endl ;
+}
+
+// initialize members in the constructor initializer list, and then print them out in the constructor body:
+
+Student::Student (int a, int b)
+ : regVar(a),
+   constVar(b)
+  {  cout << regVar  <<
+     constVar <<  endl;
+  }
+/*
+Using member initializers is NOT a good programming style. You should ALWAYS seperate the header from the source. Hence, dont use the member initializer with regular variables.
+Furthermore, there is a good alternative to initialise a const variable. Imagine you dont want to just assign the value directly, maybe you have to check some conditions and do some calculation. In this case use again the ternary operator ":" to call a function that is doing the same job. The function has to be a static member function (suggestion: private or protected)
+*/
+
+// You can also initialize constructors
+
+class Foo{
+public:
+    Foo() : apples(0), pears(1.5), color("red") {
+        //
+    }
+
+    Foo(float x, float y, float z) : xpos(x), ypos(y), zpos(z), Foo() {
+        //
+    }
+
+private:
+    int apples;
+    double pears;
+    string color;
+    float xpos, ypos, zpos;
+};
