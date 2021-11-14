@@ -1,0 +1,16 @@
+// pswd gen
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main(){
+cout << "----RANDOM PASSWORD GENERATOR----" << endl;cout << "Type the length of the numerical password:" << endl;
+	srand(time(0));
+	int y; cin >> y;
+cout << "Your password:" << endl;
+	for(int x=0;x<y;x++)
+	{
+		cout << 1+(rand()%9) ;
+	}
+	}
