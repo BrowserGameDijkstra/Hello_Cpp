@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+struct PunktT
+{
+double x; 
+double y;
+};
+PunktT punkte[11];
+double m = 2.5; 
+double b = -1;
+for (int i = 0; i < 11; i++) {
+double x = i-5; punkte[i].x = x;
+punkte[i].y = m*x + b;
+//cout<< punkte[i].y <<endl;
+return(0);
+}
+}
