@@ -1,0 +1,69 @@
+/*
+Access specifiers are used to set access levels to particular members of the class.
+The three levels of access specifiers are public, protected, and private.
+
+A public member is accessible from outside the class, and anywhere within the scope of the class object.
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class myClass {
+  public:
+    string name;
+};
+
+int main() {
+  myClass myObj;
+  myObj.name = "SoloLearn";
+  cout << myObj.name;
+  return 0;
+}
+
+//Outputs "SoloLearn"
+//Access modifiers only need to be declared once; multiple members can follow a single access modifier.
+//Notice the colon (:) that follows the public keyword.
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class myClass {
+    public:
+        string name;
+};
+
+int main() {
+    myClass myObj;
+    myClass myage;
+    myObj.name = "babak rostami\n";
+    myage.name ="20 years old";
+    cout << myObj.name;
+    cout << myage.name;
+    return 0;
+}
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class SamuelsClass {
+    public:
+       void setName(string x){
+           name = x;
+       }
+       string getName(){
+           return name;
+       }
+       private:
+        string name;
+};
+
+int main() {
+    SamuelsClass  pc;
+    pc.setName("Sololearn is a place to be");
+    cout << pc.getName();
+
+    return 0;
+}
