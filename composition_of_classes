@@ -1,0 +1,93 @@
+// Composition of classes 2
+/*
+ Person class has a member of type Birthday:
+ Composition is used for objects that share a has-a relationship, as in "A Person has a
+ Birthday */
+
+class Person {
+ public:
+  Person(string n, Birthday b)
+  : name(n),
+    bd(b)
+  {
+  }
+ private:
+  string name;
+  Birthday bd;
+};
+
+// EXAMPLE2
+#include <iostream>
+using namespace std;
+
+class Birthday{
+public:
+    Birthday(int d, int m, int y)
+    :Day(d),Month(m),Year(y){
+    }
+
+    void PrintBirthday(){
+        cout << Day << "/" << Month << "/" << Year << endl;
+    }
+private:
+    int Day, Month, Year;
+};
+
+class People{
+public:
+    People(string name, Birthday bd)
+    :Name(name), Birth(bd){
+    }
+void PrintInfo(){
+        cout << "Name: " << Name << "\n" << "Birthday: ";
+        Birth.PrintBirthday();
+    }
+private:
+    string Name;
+    Birthday Birth;
+};
+
+int main(){
+    Birthday Birthday1st(15,10,2003);
+    People People1st("Adrit",Birthday1st);
+
+    People1st.PrintInfo();
+    return 0;
+
+}
+
+//  ''People's'' constructor, taking two parameters and initializing its private members: name and dateOfBirth
+People::People(string x, Birthday bo)
+ :name(x), dateOfBirth(bo) 
+   {  
+   }
+   
+// a printInfo() function
+// Notice that we can call the bd member's printDate() function, since it's of type Birthday, which has that function defined
+
+class Person {
+ public:
+  Person(string n, Birthday b)
+  : name(n),
+  bd(b)
+  {
+  }
+  void printInfo()
+  {
+   cout << name << endl;
+   bd.printDate();
+  }
+ private:
+  string name;
+  Birthday bd;
+};
+
+// define the printInfo() function, which prints ''People's'' name and birthdate, using dateOfBirth's printDate() function
+
+void People::printInfo () 
+{
+ cout << name << endl;
+ dateOfBirth .printDate ();
+}
+
+
