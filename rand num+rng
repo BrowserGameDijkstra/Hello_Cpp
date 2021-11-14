@@ -1,0 +1,17 @@
+//cin numbers+range
+include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main () {
+    int x; 
+    
+    int z;
+    cin>>x; //how many times
+    cin>>z; //range 
+    
+    for (int y=1; y<=x;y++) {
+        cout<<1+(rand()%z)<<endl;       
+    } 
+      }
