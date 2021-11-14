@@ -1,0 +1,44 @@
+//if you declare a function as a prototype before you define the function, you have to define the parameters
+#include <iostream>
+using namespace std;
+
+void PrintSomething(int x); 
+/*the int x part here is vital. The program won't be compiled otherwise if the parentheses are empty*/
+
+int main()
+{
+     PrintSomething(42);
+     return 0;
+}
+
+void PrintSomething(int x)
+{
+     cout << x << " is a variable." << endl;
+}
+
+/////////////////////////////////////////////////////////////////////////////
+// difference function paramters
+
+#include <iostream>
+using namespace std;
+
+int sum(int x, int y)
+
+return x+ y;
+
+
+// Here int x, int y are parameters
+/* The function sum takes in these values and then returns their sum.
+*/
+
+int main()
+{
+
+int a  = 2;
+int b = 3;
+
+cout<<sum(a,b)<<endl;
+
+/*  Here, a and b are arguments as you are entering the values which will be considered as x and y when the function sum() is run. */
+return 0;
+}
