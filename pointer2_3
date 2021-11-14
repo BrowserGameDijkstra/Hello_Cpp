@@ -1,0 +1,74 @@
+Here's how it goes:
+
+int x = 5;           // variable x holds the value of 5
+int *p = &x;      // pointer p (without asterisk) has the address of x.
+                            // so *p (with asterisk) refers to the value of x. NOTE: Any change in
+                           // the value of x will also be the change in the value of *p and vise versa
+
+x = x + 4;         // x has a value of 9 (as the note says, if x == 9, then *p == 9)
+x = *p + 4;      // (equivalent arithmetic expression: x = 9 + 4) so x == 13
+*p = *p + 4;   // now that x == 13, *p will, therefore, also be equal to 13 so
+                         // the arithmetic expression above is equivalent to *p = 13 + 4.
+                         // after all the evaluation above, the current value of *p will be 17 and
+cout << x;     // therefore, x will also hold 17
+
+#include <iostream>
+using namespace std;
+//A simple summary about pointers.
+//Have fun programming!
+int main()
+{
+    int number = 10;
+    //Variable with value 10 is initialized.
+    int *p = nullptr;
+    //Pointer p is initialized with nullptr (optionally use p = NULL).
+    p = &number;
+    //Value of pointer p is changed to the memory address of variable 'number'.
+
+    cout << *p << endl;
+    //Displays the value 10, which is stored on the stack.
+    cout << p << endl;
+    //Displays the address of variable 'number', which p points to.
+    cout << &p << endl;
+    //Displays the address of p, which is stored on the stack.
+
+    cout << "\n";
+
+    cout << (number = number + 14) << endl;
+    //Output is 24
+    cout << (*p = *p + 14) << endl;
+    //Is equivalent to line above (outputs 38 because 14 was already added in the line above).
+
+    cout << "\n";
+
+    p = nullptr;
+    //p's value is changed to nullptr.
+    p = new int;
+    //Request memory on the heap.
+    *p = 5;
+    //Store value 5 on the heap.
+
+    cout << *p << endl;
+    //Displays the value 5, which is stored on the heap.
+    cout << p << endl;
+    //Displays the address on the heap p points to.
+    cout << &p << endl;
+    //Displays the address of p, which is stored on the stack.
+
+    delete p;
+    //Free up the memory that was requested on the heap.
+                                            //p is a dangling pointer now (points to a memory address that is not used anymore).
+
+    p = nullptr;
+    //p's value is changed to nullptr.
+    p = new int[20];
+    //Request memory on the heap for an array.
+    delete[] p;
+    //Free up the memory that was requested on the heap.
+                                            //p is a dangling pointer again.
+                                            
+    p = nullptr;
+    //p's value is changed to nullptr.
+
+    return 0;
+}
