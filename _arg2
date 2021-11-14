@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int sum(int a=2, int b=3) {
+    int result = a + b;
+    return (result);
+}
+
+int main() {
+    int x = 4;
+    int y = 5;
+
+    //calling the function with both parameters
+    int result = sum(x, y);
+    cout << result << endl;
+
+    //calling the function without b
+    result = sum(x);
+    cout <<  result << endl;
+    
+    //calling the function without a
+    result = sum(y);
+    cout <<  result << endl;
+
+  return 0;
+}
