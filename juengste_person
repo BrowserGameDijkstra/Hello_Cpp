@@ -1,0 +1,23 @@
+// Suchalgorithmus nach juengster Person
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+int a[8] = {19,13,135,10,16,17,18,19}; // array Werte
+int j = 0; // Startpunkt für arraydurchlauf
+ 
+for (int i = 1; i<8;i++) // array wird durchlaufen
+{
+ if (a[i] < a[j]) // array wird von 0 bis 7 durchlaufen also 8 mal mit den Werten j
+ {
+ j = i; // Rang und Wert werden verknuepft auf ; achten
+ }
+}
+  cout << "Person " << j << " mit dem alter " << a[j] << " ist die juengste Person" << endl;
+
+
+return 0;
+}
